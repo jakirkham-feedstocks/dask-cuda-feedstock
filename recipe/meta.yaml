@@ -27,7 +27,7 @@ requirements:
     - distributed =2021.09.1
     - numba >=0.53.1
     - numpy >=1.16.0
-    - pynvml >=8.0.3
+    - pynvml >=11.0.0
 
 test:
   imports:
