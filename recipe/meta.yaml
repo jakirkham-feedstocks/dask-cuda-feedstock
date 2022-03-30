@@ -28,7 +28,7 @@ requirements:
     - numba >=0.53.1
     - numpy >=1.16.0
     - pynvml >=11.0.0
-    - click <8.1
+    - click =8.0.4
     - __unix
 
 test:
