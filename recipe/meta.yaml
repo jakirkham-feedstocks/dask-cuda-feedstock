@@ -11,7 +11,7 @@ source:
   sha256: 5b369b3f3d2c62841f742ad4cfe5b6334dd40e7b397ac5dc46bd41167d527cc2
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -28,7 +28,7 @@ requirements:
     - numba >=0.53.1
     - numpy >=1.16.0
     - pynvml >=11.0.0
-    - click =8.0.4
+    - click ==8.0.4
     - __linux
 
 test:
