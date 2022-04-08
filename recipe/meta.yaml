@@ -1,5 +1,5 @@
 {% set name = "dask-cuda" %}
-{% set version = "22.2.0" %}
+{% set version = "22.4.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dask-cuda-{{ version }}.tar.gz
-  sha256: 6a7884504c6b5d5a7c3fd20356672365e00090cb66bf3bfe60b80097d1593946
+  sha256: 5b369b3f3d2c62841f742ad4cfe5b6334dd40e7b397ac5dc46bd41167d527cc2
 
 build:
   number: 0
@@ -19,15 +19,17 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8,<3.10
     - pip
   run:
-    - python >=3.7
-    - dask >=2021.11.1,<=2022.01.0
-    - distributed >=2021.11.1,<=2022.01.0
+    - python >=3.8,<3.10
+    - dask ==2022.03.0
+    - distributed ==2022.03.0
     - numba >=0.53.1
     - numpy >=1.16.0
     - pynvml >=11.0.0
+    - click =8.0.4
+    - __linux
 
 test:
   imports:
