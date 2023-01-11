@@ -1,7 +1,6 @@
 {% set name = "dask-cuda" %}
 {% set version = "22.12.0" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
