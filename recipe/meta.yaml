@@ -1,5 +1,5 @@
 {% set name = "dask-cuda" %}
-{% set version = "22.12.0" %}
+{% set version = "23.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,24 +7,29 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dask-cuda-{{ version }}.tar.gz
-  sha256: 9f6cab004c77feb460842d5174f9a1496931f6211d8d5e7469a1dc2614a7d76b
+  sha256: 5261a4cddec546478e0778d32072ffe050fd1b4f92a18407fe1c58332712b4ae
 
 build:
   number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - dask-cuda-worker = dask_cuda.cli.dask_cuda_worker:go
+    - dask-cuda-worker = dask_cuda.cli:worker
+    - dask-cuda-config = dask_cuda.cli:config
 
 requirements:
   host:
     - python >=3.8
+    - setuptools >=64.0.0
+      # tomli should be less py<3.11
+    - tomli
+    - versioneer >=0.24
     - pip
-    - versioneer
   run:
     - python >=3.8
-    - dask ==2022.11.1
-    - distributed ==2022.11.1
+    - dask-core ==2023.1.1
+    - distributed ==2023.1.1
+    - dask ==2023.1.1
     - pynvml >=11.0.0
     - numpy >=1.18.0
     - numba >=0.54
@@ -39,6 +44,7 @@ test:
   commands:
     - pip check
     - dask-cuda-worker --help
+    - dask-cuda-config --help
   requires:
     - pip
 
