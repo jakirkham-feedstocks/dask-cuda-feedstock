@@ -58,6 +58,8 @@ about:
   summary: Utilities for Dask and CUDA interactions
   license: Apache-2.0
   license_file: LICENSE
+  doc_url: https://docs.rapids.ai/api/dask-cuda/stable/
+  dev_url: https://github.com/rapidsai/dask-cuda
 
 extra:
   recipe-maintainers:
