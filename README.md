@@ -9,6 +9,10 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dask-cuda-feeds
 
 Summary: Utilities for Dask and CUDA interactions
 
+Development: https://github.com/rapidsai/dask-cuda
+
+Documentation: https://docs.rapids.ai/api/dask-cuda/stable/
+
 Current build status
 ====================
 
