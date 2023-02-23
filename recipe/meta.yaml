@@ -43,8 +43,13 @@ test:
     - dask_cuda.benchmarks
   commands:
     - pip check
+    # Old entry points
     - dask-cuda-worker --help
     - dask-cuda-config --help
+    # New entry points
+    - dask cuda --help
+    - dask cuda worker --help
+    - dask cuda config --help
   requires:
     - pip
 
